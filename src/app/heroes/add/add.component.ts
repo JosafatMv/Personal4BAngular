@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Heroe } from "../entities/heroe";
 import { ListComponent } from '../list/list.component';
+import { ServicesService } from '../services/services.service';
 
 @Component({
   selector: 'app-add-heroe',
@@ -14,12 +15,12 @@ export class AddHeroeComponent{
     abilities: []
   }
 
-  constructor(private ListComponent:ListComponent){
+  constructor(private service:ServicesService){
 
   }
 
   saveHeroe(){
-    this.ListComponent.listHeroes.push(this.heroe)
+    this.service.saveHeroe(this.heroe);
   }
 
 
