@@ -6,18 +6,12 @@ import { Heroe } from '../entities/heroe';
   templateUrl: './list.component.html',
 })
 export class ListComponent{
-  heroes: Heroe[] = [];
-  heroe: Heroe = {
-    name: '',
-    power: 0,
-    habilities: []
+  private _heroes: Heroe[] = [];
+
+
+  public get listHeroes(): Heroe[] {
+    return [...this._heroes];
   }
 
-  constructor(){
-    this.heroes.unshift({
-      name: 'Josa',
-      power: 10,
-      habilities: ['Ninguna']
-    })
-  }
+
 }
